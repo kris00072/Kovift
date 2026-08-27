@@ -36,7 +36,7 @@ TaskLab was an earlier venture owned by the founder and colleagues. The two exis
 
 Updated positioning:
 
-> Turn complex systems into business momentum.
+> A hands-on team for AI, data and digital products.
 
 Suggested actions:
 
