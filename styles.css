@@ -13,3 +13,27 @@
 @media(max-width:720px){.work-intro{grid-template-columns:1fr;gap:22px;margin-top:40px}.work-intro p{font-size:14px}.work-cta{margin-top:24px}}
 .hero-bottom{grid-template-columns:1fr 1fr}
 .signal{display:none}
+
+/* Reference-inspired hero layout: the right side explains the offer instead of decorating it. */
+.hero{background:radial-gradient(circle at 76% 28%,rgba(252,91,43,.08),transparent 25%),var(--ink)}
+.hero-grid{grid-template-columns:minmax(0,1.3fr) minmax(310px,.7fr);gap:8vw}
+.hero h1{max-width:850px}
+.hero h1 em{color:var(--orange)}
+.hero-side{border:1px solid #26384a;background:rgba(16,30,45,.72);padding:25px 24px 24px;margin-bottom:61px}
+.hero-kicker{font:500 10px 'DM Mono',monospace;letter-spacing:.08em;color:var(--orange);margin:0 0 19px}
+.hero-offerings{list-style:none;padding:0;margin:0 0 24px;border-top:1px solid #304151}
+.hero-offerings li{display:grid;grid-template-columns:34px 1fr;gap:3px 9px;padding:13px 0;border-bottom:1px solid #304151}
+.hero-offerings span{grid-row:span 2;font:10px 'DM Mono',monospace;color:#8795a3;padding-top:2px}
+.hero-offerings b{font-size:13px;letter-spacing:-.02em}
+.hero-offerings small{font-size:11px;line-height:1.45;color:#94a3b1}
+.hero-side .hero-buttons{gap:18px}
+.hero-side .button{flex:1;justify-content:space-between}
+.hero-side .text-link{white-space:nowrap}
+
+@media(max-width:720px){
+	.hero{padding-top:55px;min-height:0}
+	.hero-grid{grid-template-columns:1fr;gap:0}
+	.hero h1{font-size:clamp(43px,12vw,70px);margin:34px 0 35px}
+	.hero-side{margin-bottom:35px;padding:20px 18px}
+	.hero-bottom{margin-top:0}
+}
