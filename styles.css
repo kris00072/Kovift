@@ -14,7 +14,6 @@
 .hero-bottom{grid-template-columns:1fr 1fr}
 .signal{display:none}
 
-/* Reference-inspired hero layout: the right side explains the offer instead of decorating it. */
 .hero{background:radial-gradient(circle at 76% 28%,rgba(252,91,43,.08),transparent 25%),var(--ink)}
 .hero-grid{grid-template-columns:minmax(0,1.3fr) minmax(310px,.7fr);gap:8vw}
 .hero h1{max-width:850px}
