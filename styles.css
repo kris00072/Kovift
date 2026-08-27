@@ -4,3 +4,5 @@
 @media(max-width:720px){.why-statement{grid-template-columns:1fr}.paths{padding-top:26px;padding-bottom:86px}.path-grid{grid-template-columns:1fr;margin-top:38px}.path-card{min-height:300px}.path-symbol{margin:24px 0 auto}.why{padding-top:85px;padding-bottom:84px}.why h2{margin-bottom:45px}.why-list article{grid-template-columns:.4fr 1fr}}
 /* Case study links */
 .project-link{display:inline-flex;align-items:center;gap:12px;font-size:12px;font-weight:700;margin-top:19px;border-bottom:1px solid currentColor;padding-bottom:5px}.project-link span{font-size:18px;line-height:12px;color:var(--orange)}.project-light .project-link span{color:#0e5f7b}
+.project-image{width:100%;height:172px;object-fit:cover;object-position:center;border-radius:2px;margin:15px 0}.project-light .project-image{object-fit:contain;background:#f7f8f4}
+@media(max-width:720px){.project-image{height:145px}}
