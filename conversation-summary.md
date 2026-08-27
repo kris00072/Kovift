@@ -34,9 +34,9 @@ TaskLab was an earlier venture owned by the founder and colleagues. The two exis
 
 ### Hero
 
-Suggested positioning:
+Updated positioning:
 
-> AI, data and product engineering built for real business outcomes.
+> Turn complex systems into business momentum.
 
 Suggested actions:
 
