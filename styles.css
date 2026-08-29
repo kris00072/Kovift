@@ -19,7 +19,7 @@
 .hero-grid{grid-template-columns:minmax(0,1.3fr) minmax(310px,.7fr);gap:8vw}
 .hero h1{max-width:850px}
 .hero h1 em{color:var(--orange)}
-.hero-side{border:1px solid #26384a;background:rgba(16,30,45,.72);padding:25px 24px 24px;margin-bottom:61px}
+.hero-side{border:1px solid #26384a;background:rgba(16,30,45,.72);padding:25px 24px 24px;margin-bottom:61px;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
 .hero-kicker{font:500 10px 'DM Mono',monospace;letter-spacing:.08em;color:var(--orange);margin:0 0 19px}
 .hero-offerings{list-style:none;padding:0;margin:0 0 24px;border-top:1px solid #304151}
 .hero-offerings li{display:grid;grid-template-columns:34px 1fr;gap:3px 9px;padding:13px 0;border-bottom:1px solid #304151}
@@ -42,3 +42,6 @@
 @media(max-width:720px){.contact-form{padding:24px!important;border-radius:18px!important}.contact-form .button{min-height:56px}}
 /* Softer placeholder text on the enquiry form */
 .contact-form input::placeholder,.contact-form textarea::placeholder{color:#b3c0c6!important;opacity:1}
+/* CSS-rendered orbital hero visual: responsive and lightweight, no image asset required. */
+.hero{position:relative;overflow:hidden;isolation:isolate}.hero-grid,.hero>.eyebrow,.hero-bottom{position:relative;z-index:2}.hero-orb{position:absolute;z-index:1;width:min(63vw,760px);aspect-ratio:1;right:-20vw;top:42px;border-radius:50%;background:radial-gradient(circle at 55% 47%,rgba(12,29,51,.08) 0 42%,rgba(3,12,26,.62) 72%,rgba(3,12,26,.03) 73%);border:1px solid rgba(84,154,255,.7);box-shadow:-13px 0 19px -10px #ff5e2a,-5px 0 4px -2px rgba(255,174,113,.95),0 0 24px rgba(43,130,255,.45),inset 0 0 70px rgba(0,0,0,.55)}.hero-orb:before{content:"";position:absolute;inset:-2px;border-radius:50%;background:linear-gradient(145deg,rgba(90,177,255,.98) 2%,rgba(39,115,255,.6) 22%,transparent 45%,transparent 67%,rgba(255,109,49,.9) 91%);mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;padding:2px}.orb-grid{position:absolute;inset:12% 8% 10% 24%;border-radius:50%;background-image:radial-gradient(circle,rgba(141,184,255,.35) 1px,transparent 1.4px);background-size:10px 10px;opacity:.48;mask-image:radial-gradient(circle at 58% 52%,#000 0 45%,transparent 74%)}.orb-glow{position:absolute;width:42%;height:42%;left:-5%;bottom:3%;border-radius:50%;background:radial-gradient(circle,rgba(255,86,35,.38),rgba(255,75,25,.09) 42%,transparent 70%);filter:blur(10px)}
+@media(max-width:720px){.hero-orb{width:104vw;right:-58vw;top:120px;opacity:.52}.orb-grid{background-size:8px 8px}.hero-grid{position:relative;z-index:2}}
