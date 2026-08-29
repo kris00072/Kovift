@@ -1,4 +1,4 @@
-const menu = document.querySelector('.menu-button');
+const menu = document.querySelector('.menu-button, .menu');
 const nav = document.querySelector('.nav');
 menu?.addEventListener('click', () => {
   const open = menu.getAttribute('aria-expanded') === 'true';
@@ -13,13 +13,23 @@ const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
+  const status = document.createElement('p');
+  status.className = 'form-status';
+  status.setAttribute('role', 'alert');
+  status.hidden = true;
+  contactForm.appendChild(status);
+
   contactForm.addEventListener('submit', async (event) => {
     event.preventDefault();
+    status.hidden = true;
+    status.textContent = '';
+
     const button = contactForm.querySelector('button[type="submit"]');
-    const originalText = button?.textContent || 'Send enquiry';
+    const originalHTML = button?.innerHTML || 'Send';
     if (button) {
       button.disabled = true;
-      button.textContent = 'Sending...';
+      button.setAttribute('aria-busy', 'true');
+      button.innerHTML = 'Sending...';
     }
 
     try {
@@ -37,9 +47,11 @@ if (contactForm) {
     } catch (error) {
       if (button) {
         button.disabled = false;
-        button.textContent = originalText;
+        button.removeAttribute('aria-busy');
+        button.innerHTML = originalHTML;
       }
-      window.location.href = 'thank-you.html';
+      status.textContent = 'Something went wrong. Your message was not sent. Please try again, or email contact@kovift.com directly.';
+      status.hidden = false;
     }
   });
 }
