@@ -152,3 +152,24 @@ if (mapField && window.WORLD_DOT_GRID) {
   });
   mapCanvas.append(svg);
 }
+
+/* ===== Solutions page: industry selector ===== */
+(function(){
+  var wrap=document.querySelector('.sl-tabs');if(!wrap)return;
+  var tabs=[].slice.call(wrap.querySelectorAll('.sl-tab'));
+  var panels=[].slice.call(wrap.querySelectorAll('.sl-panel'));
+  if(!tabs.length||tabs.length!==panels.length)return;
+  function activate(i){
+    tabs.forEach(function(t,j){var on=j===i;t.classList.toggle('is-active',on);t.setAttribute('aria-selected',on?'true':'false');t.tabIndex=on?0:-1;});
+    panels.forEach(function(p,j){if(j===i){p.removeAttribute('hidden');}else{p.setAttribute('hidden','');}});
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){activate(i);});
+    t.addEventListener('keydown',function(e){
+      var d=e.key==='ArrowDown'||e.key==='ArrowRight'?1:(e.key==='ArrowUp'||e.key==='ArrowLeft'?-1:0);
+      if(!d)return;e.preventDefault();var n=(i+d+tabs.length)%tabs.length;activate(n);tabs[n].focus();
+    });
+  });
+  var m=(location.search||'').match(/tab=(\d+)/);
+  if(m)activate(Math.min(tabs.length,Math.max(1,+m[1]))-1);
+})();
