@@ -1,3 +1,10 @@
 # Private source material used to prepare anonymised public case studies.
 /case studies/
 /Founder pics/
+
+# Local preview / verification artifacts (not part of the site)
+/google-mockup-preview.png
+/google-result-mockup.html
+/verify-case.png
+/verify-workhub.png
+/verify-*.png
