@@ -167,6 +167,30 @@
 @keyframes sv-dot-pulse{0%,100%{transform:scale(1);opacity:.85}50%{transform:scale(1.45);opacity:1}}
 @media(prefers-reduced-motion:reduce){.sv-chip,.sv-chip i,.sv-core:before,.sv-core:after,.sv-chips .sv-lines line{animation:none}}
 @media(max-width:1330px){.sv-chips{display:none}}
+/* ===== About page: delivery footprint map (hero) ===== */
+.ab-hero{position:relative}
+.ab-map{position:absolute;z-index:1;right:5vw;top:288px;width:min(470px,33.2vw)}
+.ab-map-canvas{position:relative}
+.ab-map-canvas svg{display:block;width:100%;height:auto;overflow:visible}
+.ab-map-label{font:500 10px 'DM Mono',monospace;letter-spacing:.13em;color:var(--orange);margin:0 0 16px}
+.ab-map-cap{font:500 10.5px 'DM Mono',monospace;letter-spacing:.09em;color:var(--muted);margin:16px 0 0;text-transform:uppercase}
+.ab-map-cap b{color:var(--paper);font-weight:500}
+.ab-dots{pointer-events:none}
+.ab-dots circle{fill:rgba(138,172,204,.32)}
+.ab-marker{cursor:default}
+.ab-marker .hit{fill:transparent;stroke:none;pointer-events:all}
+.ab-marker .core{fill:var(--orange);filter:drop-shadow(0 0 3px rgba(252,91,43,.95)) drop-shadow(0 0 10px rgba(252,91,43,.55));transform-box:fill-box;transform-origin:center;animation:ab-pop .5s ease both;animation-delay:var(--d,0s);transition:transform .2s ease}
+.ab-marker .bloom{fill:url(#ab-glow);animation:ab-breathe 3.2s ease-in-out infinite;animation-delay:var(--d,0s)}
+.ab-marker:hover .bloom{opacity:1}
+.ab-marker:hover .core{transform:scale(1.7)}
+@keyframes ab-breathe{0%,100%{opacity:.55}50%{opacity:1}}
+.ab-marker .halo{fill:none;stroke:rgba(252,91,43,.5);stroke-width:.09;transform-box:fill-box;transform-origin:center;animation:ab-ping 3s ease-out infinite;animation-delay:var(--d,0s)}
+@keyframes ab-ping{0%{transform:scale(.5);opacity:.9}70%,100%{transform:scale(3);opacity:0}}
+@keyframes ab-pop{from{transform:scale(0)}to{transform:scale(1)}}
+.ab-map-tip{position:absolute;z-index:2;transform:translate(-50%,-175%);background:#152438;border:1px solid rgba(252,91,43,.45);border-radius:6px;padding:6px 10px;font:500 10.5px 'DM Mono',monospace;letter-spacing:.06em;color:#fff;text-transform:uppercase;white-space:nowrap;pointer-events:none;box-shadow:0 10px 24px -12px rgba(0,0,0,.7)}
+.ab-map-tip:after{content:"";position:absolute;left:50%;bottom:-4.5px;width:8px;height:8px;background:#152438;border-right:1px solid rgba(252,91,43,.45);border-bottom:1px solid rgba(252,91,43,.45);transform:translateX(-50%) rotate(45deg)}
+@media(prefers-reduced-motion:reduce){.ab-marker .core,.ab-marker .halo,.ab-marker .bloom{animation:none}}
+@media(max-width:1280px){.ab-map{display:none}}
 /* ===== Services page: homepage button language ===== */
 .sv-hero-actions .button,.sv-cta .button{margin-top:0;display:inline-flex;align-items:center;gap:12px;padding:15px 18px;border-radius:3px;font-size:12px;font-weight:800;will-change:transform;transition:transform .2s ease-out,background .2s ease,box-shadow .25s ease,border-color .2s ease}
 .sv-hero-actions .button span,.sv-cta .button span{font-size:19px;line-height:10px;transition:transform .25s ease}
